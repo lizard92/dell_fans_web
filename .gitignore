@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.swp
+.DS_Store
+Thumbs.db
+.env
+.env.local
+.env.*.local
+!.env.example

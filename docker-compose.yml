@@ -1,0 +1,17 @@
+services:
+  dell-fans-web:
+    image: mixi92/dell_fans_web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dell-fans-web
+    restart: unless-stopped
+    ports:
+      - "6060:6060"
+    environment:
+      APP__ADMINUSERNAME: "${APP__ADMINUSERNAME:-admin}"
+      APP__ADMINPASSWORD: "${APP__ADMINPASSWORD:-}"
+      APP__IPMIHOST: "${APP__IPMIHOST:-}"
+      APP__IPMIUSERNAME: "${APP__IPMIUSERNAME:-root}"
+      APP__IPMIPASSWORD: "${APP__IPMIPASSWORD:-}"
+      APP__IPMITOOLPATH: "${APP__IPMITOOLPATH:-ipmitool}"
